@@ -47,31 +47,34 @@ def get_price(url):
     
     # Get the required data
     html = request_url(url)
-    print(html)
     store = get_store(url)
     price = None
     
     # Find and format the price
-    if store == 'kabum':
-        price = html.find(class_ = 'finalPrice')
-        if price is not None: price = price.text[3:].replace('.', '').replace(',', '.')
+    try:
+        if store == 'kabum':
+            price = html.find(class_ = 'finalPrice')
+            if price is not None: price = price.text[3:].replace('.', '').replace(',', '.')
+        
+        elif store == 'magaz':
+            price = html.find(class_ = 'sc-kpDqfm eCPtRw sc-bOhtcR dOwMgM')
+            if price is not None: price = price.text[3:].replace('.', '').replace(',', '.')
+        
+        elif store == 'eneba':
+            price1 = html.find(class_ = 'L5ErLT dXrfjQ')
+            price2 = html.find(class_ = 'TYs67U')
+            if price1 is not None: price1 = price1.text[3:].replace('.', '').replace(',', '.')
+            if price2 is not None: price2 = price2.text[3:].replace('.', '').replace(',', '.').replace('Preço mais baixo', '')
+            if price1 is not None and price2 is None: price = price1
+            elif price2 is not None and price1 is None: price = price2
+            if price1 is not None and price2 is not None:
+                if float(price1) > float(price2): price = price2
+                else: price = price1
+        
+        return price
     
-    elif store == 'magaz':
-        price = html.find(class_ = 'sc-kpDqfm eCPtRw sc-bOhtcR dOwMgM')
-        if price is not None: price = price.text[3:].replace('.', '').replace(',', '.')
-    
-    elif store == 'eneba':
-        price1 = html.find(class_ = 'L5ErLT dXrfjQ')
-        price2 = html.find(class_ = 'TYs67U')
-        if price1 is not None: price1 = price1.text[3:].replace('.', '').replace(',', '.')
-        if price2 is not None: price2 = price2.text[3:].replace('.', '').replace(',', '.').replace('Preço mais baixo', '')
-        if price1 is not None and price2 is None: price = price1
-        elif price2 is not None and price1 is None: price = price2
-        if price1 is not None and price2 is not None:
-            if float(price1) > float(price2): price = price2
-            else: price = price1
-    
-    return price
+    except:
+        return None
 
 def get_name(url):
     '''

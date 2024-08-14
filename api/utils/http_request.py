@@ -31,8 +31,11 @@ def get_store(url):
         str: First 5 letters of the store name
     '''
     
-    index = url.find('www.') + 4
-    return url[index:index + 5]
+    try:
+        index = url.find('www.') + 4
+        return url[index:index + 5]
+    except:
+        return None
 
 def get_price(url):
     '''
@@ -93,18 +96,11 @@ def get_name(url):
     
     # Find the name
     if store == 'kabum':
-        try:
-            name = html.find(class_ = 'sc-58b2114e-6').contents[0]
-        except:
-            name = None
+        name = html.find(class_ = 'sc-58b2114e-6').contents[0]
     elif store == 'magaz':
-        try:
-            name = html.find(class_ = 'gXZPqL').contents[0]
-        except:
-            name = None
+        name = html.find(class_ = 'gXZPqL').contents[0]
     elif store == 'eneba':
-        try:
-            name = html.find(class_ = 'C68dpx').contents[0]
-        except:
-            name = None
+        name = html.find(class_ = 'C68dpx').contents[0]
+    else:
+        name = None
     return name

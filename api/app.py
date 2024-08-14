@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify
 from urllib.parse import unquote
-from utils.http_request import *
-from utils.get_datetime import *
+from http_request import *
+from get_datetime import *
 
 app = Flask(__name__)
 

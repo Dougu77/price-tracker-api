@@ -1,8 +1,8 @@
 # Imports
 from flask import Flask, render_template, jsonify
 from urllib.parse import unquote
-from utils.http_request import *
-from utils.get_datetime import *
+from utils.http_request import get_name, get_price
+from utils.get_datetime import get_date, get_time
 
 # Create Flask app
 app = Flask(__name__)

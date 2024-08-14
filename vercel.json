@@ -3,7 +3,12 @@
   [
     {
       "source": "/(.*)",
-      "destination": "/api/app.py"
+      "destination": "/api/app"
     }
-  ]
+  ],
+
+  "env":
+  {
+    "PYTHONPATH": "api/"
+  }
 }

@@ -33,3 +33,7 @@ def get_product(url):
         'time': time
     }
     return jsonify(product)
+
+# # Run application
+# if __name__ == '__main__':
+#     app.run()

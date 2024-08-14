@@ -32,8 +32,7 @@ def get_product(url):
         'date': date,
         'time': time
     }
-    # return jsonify(product)
-    return '<p>OK</p>'
+    return jsonify(product)
 
 # # Run application
 # if __name__ == '__main__':

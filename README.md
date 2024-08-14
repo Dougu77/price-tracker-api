@@ -1,28 +1,15 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+# Price Tracker API
 
-# Flask + Vercel
+## Informações
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+- Ainda em desenvolvimento, funciona localmente, mas como a API está hospedada em Washington, alguns sites estão bloqueados fora do Brasil.
+- API de rastrear preços das lojas [Kabum](https://www.kabum.com.br), [Magazine Luiza](https://www.magazineluiza.com.br), e [Eneba](https://www.eneba.com).
+- Utilize /track/<url> depois do link da API
+- Exemplo: https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming
 
-## Demo
+## Informations
 
-https://flask-python-template.vercel.app/
-
-## How it Works
-
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
-
-## Running Locally
-
-```bash
-npm i -g vercel
-vercel dev
-```
-
-Your Flask application is now available at `http://localhost:3000`.
-
-## One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+- Still in development, works locally, but since the API is hosted in Washington, some websites are blocked for countries outside Brazil.
+- Price tracker API for the stores [Kabum](https://www.kabum.com.br), [Magazine Luiza](https://www.magazineluiza.com.br), and [Eneba](https://www.eneba.com).
+- Use /track/<url> after the API link.
+- Example: https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming

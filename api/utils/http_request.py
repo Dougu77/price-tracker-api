@@ -47,6 +47,7 @@ def get_price(url):
     
     # Get the required data
     html = request_url(url)
+    print(html)
     store = get_store(url)
     price = None
     

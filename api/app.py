@@ -13,7 +13,7 @@ def home():
     return render_template('index.html')
 
 # Track product endpoint
-@app.route('/api/<path:url>', methods=['GET'])
+@app.route('/track/<path:url>', methods=['GET'])
 def get_product(url):
     
     # Decode the URL

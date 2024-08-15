@@ -56,28 +56,26 @@ def get_price(url):
     # Find and format the price
     try:
         if store == 'kabum':
-            price = html.find(class_ = 'finalPrice')
-            if price is not None: price = price.text[3:].replace('.', '').replace(',', '.')
+            price = format_price(html.find(class_ = 'finalPrice'))
         
         elif store == 'magaz':
-            price = html.find(class_ = 'sc-kpDqfm eCPtRw sc-bOhtcR dOwMgM')
-            if price is not None: price = price.text[3:].replace('.', '').replace(',', '.')
+            price = format_price(html.find(class_ = 'sc-kpDqfm eCPtRw sc-camqpD cFgZBi'))
+            print(html.findAll(class_ = 'sc-kpDqfm eCPtRw sc-camqpD cFgZBi'))
         
         elif store == 'eneba':
-            price1 = html.find(class_ = 'L5ErLT dXrfjQ')
-            price2 = html.find(class_ = 'TYs67U')
-            if price1 is not None: price1 = price1.text[3:].replace('.', '').replace(',', '.')
-            if price2 is not None: price2 = price2.text[3:].replace('.', '').replace(',', '.').replace('Preço mais baixo', '')
-            if price1 is not None and price2 is None: price = price1
-            elif price2 is not None and price1 is None: price = price2
-            if price1 is not None and price2 is not None:
-                if float(price1) > float(price2): price = price2
-                else: price = price1
+            print(html)
+            price1 = format_price(html.find(class_ = 'dXrfjQ'))
+            price2 = format_price(html.find(class_ = 'L5ErLT'))
+            if float(price1) > float(price2): price = price2
+            else: price = price1
         
         return price
     
     except:
         return None
+
+def format_price(price):
+    return price.text[3:].replace('.', '').replace(',', '.')
 
 def get_name(url):
     '''
@@ -95,12 +93,15 @@ def get_name(url):
     store = get_store(url)
     
     # Find the name
-    if store == 'kabum':
-        name = html.find(class_ = 'sc-58b2114e-6').contents[0]
-    elif store == 'magaz':
-        name = html.find(class_ = 'gXZPqL').contents[0]
-    elif store == 'eneba':
-        name = html.find(class_ = 'C68dpx').contents[0]
-    else:
-        name = None
-    return name
+    try:
+        if store == 'kabum':
+            name = html.find(class_ = 'sc-58b2114e-6').contents[0]
+        elif store == 'magaz':
+            name = html.find(class_ = 'gXZPqL').contents[0]
+        elif store == 'eneba':
+            name = html.find(class_ = 'C68dpx').contents[0]
+        else:
+            name = None
+        return name
+    except:
+        return 'Bot blocked by the website'

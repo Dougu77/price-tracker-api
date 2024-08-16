@@ -8,11 +8,11 @@ def get_datetime():
     Get the time of when the search is made
     
     Returns:
-        str: Time
+        tuple: date, time
     '''
     
     try:
-        client_ip = request.headers.get('X-Forwarded-For') or request.remote_addr      
+        client_ip = request.headers.get('X-Forwarded-For') or request.remote_addr
         url = f'https://worldtimeapi.org/api/ip/{client_ip}'
         response = requests.get(url)
         data = response.json()

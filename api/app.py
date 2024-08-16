@@ -22,7 +22,7 @@ def get_product(url):
     # Get the necessary data
     name = get_name(product_url)
     price = get_price(product_url)
-    datetime = get_datetime
+    datetime = get_datetime()
     
     # Create the dictionary (JSON)
     product = {

@@ -101,7 +101,7 @@ def get_name(url):
         elif store == 'eneba':
             name = html.find(class_ = 'C68dpx').contents[0]
         else:
-            name = None
+            name = 'Website not supported'
         return name
     except:
-        return 'Bot blocked by the website'
+        return 'API blocked by the website'

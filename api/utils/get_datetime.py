@@ -21,4 +21,4 @@ def get_datetime():
         datetime = (date, time)
         return datetime
     except:
-        return None
+        return (None, None)

@@ -1,21 +1,9 @@
 # Imports
-from datetime import datetime
+from flask import request
+import requests
 
-# Functions
-def get_date():
-    '''
-    Get the date of when the search is made
-    
-    Returns:
-        str: Date
-    '''
-    
-    try:
-        return datetime.now().strftime('%y-%m-%d')
-    except:
-        return None
-
-def get_time():
+# Function
+def get_datetime():
     '''
     Get the time of when the search is made
     
@@ -24,6 +12,13 @@ def get_time():
     '''
     
     try:
-        return datetime.now().strftime('%H:%M:%S')
+        client_ip = request.headers.get('X-Forwarded-For') or request.remote_addr      
+        url = f'https://worldtimeapi.org/api/ip/{client_ip}'
+        response = requests.get(url)
+        data = response.json()
+        date = data.get('datetime')[:10]
+        time = data.get('datetime')[11:19]
+        datetime = (date, time)
+        return datetime
     except:
         return None

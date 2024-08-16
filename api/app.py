@@ -2,7 +2,7 @@
 from flask import Flask, render_template, jsonify
 from urllib.parse import unquote
 from utils.http_request import get_name, get_price
-from utils.get_datetime import get_date, get_time
+from utils.get_datetime import get_datetime
 
 # Create Flask app
 app = Flask(__name__)
@@ -22,15 +22,14 @@ def get_product(url):
     # Get the necessary data
     name = get_name(product_url)
     price = get_price(product_url)
-    date = get_date()
-    time = get_time()
+    datetime = get_datetime
     
     # Create the dictionary (JSON)
     product = {
         'name': str(name),
         'price': str(price),
-        'date': date,
-        'time': time
+        'date': datetime[0],
+        'time': datetime[1]
     }
     return jsonify(product)
 

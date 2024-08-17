@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Functions
-def request_url(url):
+def request_url(url:str):
     '''
     Make the HTML request
     
@@ -15,9 +15,10 @@ def request_url(url):
     '''
     print('Entrando em request_url.')
     print(url)
+    print(url.replace(':/', '://'))
     try:
         print('Dentro do try.')
-        response = requests.get(url)
+        response = requests.get(url.replace(':/', '://'))
         print(response)
         print(BeautifulSoup(response.text, 'html.parser'))
         return BeautifulSoup(response.text, 'html.parser')
@@ -25,7 +26,7 @@ def request_url(url):
         print(e)
         return None
 
-def get_store(url):
+def get_store(url:str):
     '''
     Get the store of product, to make the search
     
@@ -42,7 +43,7 @@ def get_store(url):
     except:
         return None
 
-def get_price(url):
+def get_price(url:str):
     '''
     Get the price of the product
 
@@ -81,7 +82,7 @@ def get_price(url):
 def format_price(price):
     return price.text[3:].replace('.', '').replace(',', '.')
 
-def get_name(url):
+def get_name(url:str):
     '''
     Get the name of the product
 

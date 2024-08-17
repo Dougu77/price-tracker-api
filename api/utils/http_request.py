@@ -57,6 +57,7 @@ def get_price(url:str):
         if store == 'kabum':
             price = format_price(html.find(class_ = 'finalPrice'))
         elif store == 'magaz':
+            print(html.find_all(class_ = 'sc-kpDqfm eCPtRw sc-camqpD cFgZBi'))
             price = format_price(html.find(class_ = 'sc-kpDqfm eCPtRw sc-camqpD cFgZBi'))
         elif store == 'eneba':
             print(html + '\n\n\n')

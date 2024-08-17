@@ -20,7 +20,8 @@ def request_url(url):
         print(response)
         print(BeautifulSoup(response.text, 'html.parser'))
         return BeautifulSoup(response.text, 'html.parser')
-    except:
+    except Exception as e:
+        print(e)
         return None
 
 def get_store(url):

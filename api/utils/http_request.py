@@ -16,6 +16,8 @@ def request_url(url):
     
     try:
         response = requests.get(url)
+        print(response)
+        print(BeautifulSoup(response.text, 'html.parser'))
         return BeautifulSoup(response.text, 'html.parser')
     except:
         return None
@@ -63,7 +65,6 @@ def get_price(url):
             print(html.findAll(class_ = 'sc-kpDqfm eCPtRw sc-camqpD cFgZBi'))
         
         elif store == 'eneba':
-            print(html)
             price1 = format_price(html.find(class_ = 'dXrfjQ'))
             price2 = format_price(html.find(class_ = 'L5ErLT'))
             if float(price1) > float(price2): price = price2
@@ -91,7 +92,6 @@ def get_name(url):
     # Get the required data
     html = request_url(url)
     store = get_store(url)
-    print(store)
     
     # Find the name
     try:

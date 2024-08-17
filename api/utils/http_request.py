@@ -13,17 +13,10 @@ def request_url(url:str):
     Returns:
         BeautifulSoup: HTML content of the URL
     '''
-    print('Entrando em request_url.')
-    print(url)
-    print(url.replace(':/', '://'))
     try:
-        print('Dentro do try.')
         response = requests.get(url.replace(':/', '://'))
-        print(response)
-        print(BeautifulSoup(response.text, 'html.parser'))
         return BeautifulSoup(response.text, 'html.parser')
-    except Exception as e:
-        print(e)
+    except:
         return None
 
 def get_store(url:str):
@@ -63,23 +56,18 @@ def get_price(url:str):
     try:
         if store == 'kabum':
             price = format_price(html.find(class_ = 'finalPrice'))
-        
         elif store == 'magaz':
             price = format_price(html.find(class_ = 'sc-kpDqfm eCPtRw sc-camqpD cFgZBi'))
-            print(html.findAll(class_ = 'sc-kpDqfm eCPtRw sc-camqpD cFgZBi'))
-        
         elif store == 'eneba':
             price1 = format_price(html.find(class_ = 'dXrfjQ'))
             price2 = format_price(html.find(class_ = 'L5ErLT'))
             if float(price1) > float(price2): price = price2
             else: price = price1
-        
         return price
-    
     except:
         return None
 
-def format_price(price):
+def format_price(price:str):
     return price.text[3:].replace('.', '').replace(',', '.')
 
 def get_name(url:str):

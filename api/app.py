@@ -27,7 +27,7 @@ def get_product(url):
     # Create the dictionary (JSON)
     product = {
         'name': str(name),
-        'price': str(price),
+        'price': price,
         'date': datetime[0],
         'time': datetime[1]
     }

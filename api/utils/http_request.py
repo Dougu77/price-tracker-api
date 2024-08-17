@@ -49,7 +49,6 @@ def get_price(url:str):
     
     # Get the required data
     html = request_url(url)
-    print(html)
     store = get_store(url)
     price = None
     
@@ -66,7 +65,7 @@ def get_price(url:str):
             price2 = format_price(html.find(class_ = 'L5ErLT'))
             if float(price1) > float(price2): price = price2
             else: price = price1
-        return price
+        return str(price)
     except:
         return None
 

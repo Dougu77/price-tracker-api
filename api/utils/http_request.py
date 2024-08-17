@@ -59,6 +59,7 @@ def get_price(url:str):
         elif store == 'magaz':
             price = format_price(html.find(class_ = 'sc-kpDqfm eCPtRw sc-camqpD cFgZBi'))
         elif store == 'eneba':
+            print(html + '\n\n\n')
             print(html.find_all(class_ = 'L5ErLT'))
             price1 = format_price(html.find(class_ = 'dXrfjQ'))
             price2 = format_price(html.find(class_ = 'L5ErLT'))

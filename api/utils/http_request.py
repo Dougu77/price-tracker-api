@@ -91,6 +91,7 @@ def get_name(url):
     # Get the required data
     html = request_url(url)
     store = get_store(url)
+    print(store)
     
     # Find the name
     try:

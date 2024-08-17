@@ -14,6 +14,7 @@ def request_url(url):
         BeautifulSoup: HTML content of the URL
     '''
     print('Entrando em request_url.')
+    print(url)
     try:
         print('Dentro do try.')
         response = requests.get(url)

@@ -12,9 +12,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-# Track product endpoint
+# Track product - endpoint
 @app.route('/track/<path:url>', methods=['GET'])
-def get_product(url):
+@app.route('/track/<path:url>/timezone/<path:timezone>', methods=['GET'])
+def get_product(url, timezone=None):
     
     # Decode the URL
     product_url = unquote(url)
@@ -22,11 +23,11 @@ def get_product(url):
     # Get the necessary data
     name = get_name(product_url)
     price = get_price(product_url)
-    datetime = get_datetime()
+    datetime = get_datetime(timezone)
     
     # Create the dictionary (JSON)
     product = {
-        'name': str(name),
+        'name': unquote(str(name)),
         'price': price,
         'date': datetime[0],
         'time': datetime[1]

@@ -14,7 +14,9 @@ def request_url(url:str):
         BeautifulSoup: HTML content of the URL
     '''
     try:
-        response = requests.get(url.replace(':/', '://'))
+        if url.find('://') == -1:
+            url = url.replace(':/', '://')
+        response = requests.get(url)
         return BeautifulSoup(response.text, 'html.parser')
     except:
         return None

@@ -3,7 +3,7 @@ from flask import request
 import requests
 
 # Function
-def get_datetime():
+def get_datetime(timezone):
     '''
     Get the time of when the search is made
     
@@ -12,8 +12,11 @@ def get_datetime():
     '''
     
     try:
-        client_ip = request.headers.get('X-Forwarded-For') or request.remote_addr
-        url = f'https://worldtimeapi.org/api/ip/{client_ip}'
+        if timezone == None:
+            client_ip = request.headers.get('X-Forwarded-For') or request.remote_addr
+            url = f'https://worldtimeapi.org/api/ip/{client_ip}'
+        else:
+            url = f'https://worldtimeapi.org/api/timezone/{timezone}'
         response = requests.get(url)
         data = response.json()
         date = data.get('datetime')[:10]

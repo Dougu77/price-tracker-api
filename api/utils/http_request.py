@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 # Functions
 def request_url(url:str):
     '''
-    Make the HTML request
+    Make the HTTP request
     
     Args:
         url (str): URL of the product
@@ -23,7 +23,7 @@ def request_url(url:str):
 
 def get_store(url:str):
     '''
-    Get the store of product, to make the search
+    Get the store of product
     
     Args:
         url (str): URL of the product
@@ -35,6 +35,30 @@ def get_store(url:str):
     try:
         index = url.find('www.') + 4
         return url[index:index + 5]
+    except:
+        return None
+
+def get_store_name(url:str):
+    '''
+    Get the name of the store
+    
+    Args:
+        url (str): URL of the product
+    
+    Returns:
+        str: Full name of the store
+    '''
+    try:
+        store = get_store(url)
+        if store == 'kabum':
+            name = 'Kabum'
+        elif store == 'magaz':
+            name = 'Magazine Luiza'
+        elif store == 'eneba':
+            name = 'Eneba'
+        else:
+            name = 'Website not supported'
+        return name
     except:
         return None
 

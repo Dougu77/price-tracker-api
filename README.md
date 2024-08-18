@@ -8,7 +8,7 @@
 - Utilize ```/track/<url>/timezone<timezone>``` depois do link da API para rastrear o produto usando uma zona específica para coletar a data e o horário da pesquisa.
 - Todas as zonas possíveis estão listadas na [WorldTimeAPI](http://worldtimeapi.org/timezones).
 - Exemplo (sem zona): https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming
-- Exemplo (com zona): https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming/timezone/America/Argentina/Buenos_Aires
+- Exemplo (com zona): https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming/timezone/Asia/Tokyo
 
 ## Informations
 
@@ -18,4 +18,4 @@
 - Use ```/track/<url>/timezone/<timezone>``` after the API link to track the product with a specific timezone to get the date and the time of the research.
 - All the timezones are listed on [WorldTimeAPI](http://worldtimeapi.org/timezones).
 - Example (without timezone): https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming
-- Example (with timezone): https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming/timezone/America/Argentina/Buenos_Aires
+- Example (with timezone): https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming/timezone/Asia/Tokyo

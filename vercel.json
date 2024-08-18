@@ -10,5 +10,13 @@
   "env":
   {
     "PYTHONPATH": "api/"
-  }
+  },
+
+  "functions":
+  {
+		"api/app.py":
+    {
+			"maxDuration": 60
+		}
+	}
 }

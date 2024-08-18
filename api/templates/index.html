@@ -3,11 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/style.css">
     <title>Price Tracker</title>
 </head>
 <body>
-    <h1>Price Tracker</h1>
-    <p>Texto a ser criado.</p>
+    <h1>Price Tracker API</h1>
+    <h2>Informações</h2>
+    <ul>
+        <li>
+            Ainda em desenvolvimento, somente na Kabum o preço é coletado corretamente.
+        </li>
+        <li>
+            API de rastrear preços das lojas <a href="https://www.kabum.com.br" target="_blank" rel="noopener noreferrer">Kabum</a>,
+            <a href="https://www.magazineluiza.com.br" target="_blank" rel="noopener noreferrer">Magazine Luiza</a>, e
+            <a href="https://www.eneba.com" target="_blank" rel="noopener noreferrer">Eneba</a>.
+        </li>
+        <li>
+            Utilize <code>/track/&lt;url&gt;</code> depois do link da API para rastrear o produto.
+        </li>
+        <li>
+            Utilize <code>/track/&lt;url&gt;/timezone&lt;timezone&gt;</code> depois do link da API para rastrear o produto usando uma zona específica para coletar a data e o horário da pesquisa.
+        </li>
+        <li>
+            Todas as zonas possíveis estão listadas na <a href="http://worldtimeapi.org/timezones" target="_blank" rel="noopener noreferrer">WorldTimeAPI</a>.
+        </li>
+        <li>
+            Exemplo (sem zona): <a href="https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming" target="_blank" rel="noopener noreferrer">
+                https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming</a>
+        </li>
+        <li>
+            Exemplo (com zona): <a href="https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming/timezone/Asia/Tokyo" target="_blank" rel="noopener noreferrer">
+                https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming/timezone/Asia/Tokyo</a>
+        </li>
+    </ul>
+    <br>
+    <h2>Informations</h2>
+    <ul>
+        <li>
+            Still in development, only on Kabum the price is collected correctly.
+        </li>
+        <li>
+            Price tracker API for the stores <a href="https://www.kabum.com.br" target="_blank" rel="noopener noreferrer">Kabum</a>,
+            <a href="https://www.magazineluiza.com.br" target="_blank" rel="noopener noreferrer">Magazine Luiza</a>, and
+            <a href="https://www.eneba.com" target="_blank" rel="noopener noreferrer">Eneba</a>.
+        </li>
+        <li>
+            Use <code>/track/&lt;url&gt;</code> after the API link to track the product.
+        </li>
+        <li>
+            Use <code>/track/&lt;url&gt;/timezone&lt;timezone&gt;</code> after the API link to track the product with a specific timezone to get the date and the time of the research.
+        </li>
+        <li>
+            All the timezones are listed on <a href="http://worldtimeapi.org/timezones" target="_blank" rel="noopener noreferrer">WorldTimeAPI</a>.
+        </li>
+        <li>
+            Example (without timezone): <a href="https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming" target="_blank" rel="noopener noreferrer">
+                https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming</a>
+        </li>
+        <li>
+            Example (with timezone): <a href="https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming/timezone/Asia/Tokyo" target="_blank" rel="noopener noreferrer">
+                https://price-tracker-api-topaz.vercel.app/track/https://www.kabum.com.br/produto/387449/placa-de-video-rtx-4090-oc-asus-nvidia-rog-strix-24-gb-gddr6x-argb-dlss-ray-tracing-rog-strix-rtx4090-o24g-gaming/timezone/Asia/Tokyo</a>
+        </li>
+    </ul>
 </body>
 </html>

@@ -1,0 +1,44 @@
+:root {
+    --code-background: #7a808a;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 2rem;
+    padding: 4px;
+}
+
+code {
+    color: white;
+    background-color: var(--code-background);
+    border-radius: 20px;
+    padding: 4px 8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: blue;
+}
